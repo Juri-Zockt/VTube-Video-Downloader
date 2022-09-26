@@ -1,17 +1,17 @@
-import time
 from pytube import YouTube
 import PySimpleGUI as sg
-import sys
 import os
+
+sg.theme("DarkBrown4")
 
 layout = [
 	[sg.Text("Youtube Video Downloader")],
 	[sg.Text("Enter your Youtube Link here: "), sg.InputText()],
 	[sg.Text("Where should the file be saved: "), sg.FolderBrowse(key="-IN-")],
 	[sg.Button("Enter!")]
-]
+]  
 
-window = sg.Window("Youtube Video Downloader", layout, element_justification='c')
+window = sg.Window("Youtube Video Downloader",  icon="Icon.ico", element_justification='c').Layout(layout)
 
 while True:
 	event, values = window.read()
